@@ -1,0 +1,63 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:5110752850455466370",
+      "lastPropertyId": "3:3135486089111803344",
+      "name": "Author",
+      "properties": [
+        {
+          "id": "1:1104503741950382031",
+          "name": "id"
+        },
+        {
+          "id": "2:7688968641821651944",
+          "name": "firstName"
+        },
+        {
+          "id": "3:3135486089111803344",
+          "name": "lastName"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "2:218100293968100804",
+      "lastPropertyId": "4:6895146242589330352",
+      "name": "Book",
+      "properties": [
+        {
+          "id": "1:2975288331993251242",
+          "name": "id"
+        },
+        {
+          "id": "2:5239199822772839810",
+          "name": "name"
+        },
+        {
+          "id": "3:3680123129774969905",
+          "name": "published"
+        },
+        {
+          "id": "4:6895146242589330352",
+          "indexId": "1:2646233423451366478",
+          "name": "customerId"
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "2:218100293968100804",
+  "lastIndexId": "1:2646233423451366478",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 4,
+  "modelVersionParserMinimum": 4,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [],
+  "retiredRelationUids": [],
+  "version": 1
+}
