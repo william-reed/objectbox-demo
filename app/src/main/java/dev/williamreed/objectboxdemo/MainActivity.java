@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     private static final int NUM_AUTHORS = 1000;
     private static final int NUM_BOOKS_PER_AUTHOR = 10;
 
+    private static final int NAMES_TO_GEN = 100;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,25 +37,29 @@ public class MainActivity extends AppCompatActivity {
         new ToastAsyncTask(this, findViewById(R.id.spinner)).execute((Task) () -> {
             long startTime = System.currentTimeMillis();
             Box<Author> authorBox = ObjectBox.get().boxFor(Author.class);
-            Box<Book> bookBox = ObjectBox.get().boxFor(Book.class);
             Faker faker = new Faker();
 
+            // generate some fake data
             List<Author> authors = new ArrayList<>(NUM_AUTHORS);
-            List<Book> books = new ArrayList<>(NUM_AUTHORS * NUM_BOOKS_PER_AUTHOR);
+            int booksCount = 0;
             for (int i = 0; i < NUM_AUTHORS; i++) {
                 Author author = new Author(faker.name().firstName(), faker.name().lastName());
 
-                authors.add(author);
+                List<Book> books = new ArrayList<>(NUM_AUTHORS * NUM_BOOKS_PER_AUTHOR);
                 for (int j = 0; j < NUM_BOOKS_PER_AUTHOR; j++) {
                     Book book = new Book(faker.book().title(), faker.date().past(365 * 10, TimeUnit.DAYS));
                     book.author.setTarget(author);
                     books.add(book);
                 }
+
+                // satisfy relationship
+                author.books.addAll(books);
+                authors.add(author);
+                booksCount += books.size();
             }
 
             authorBox.put(authors);
-            bookBox.put(books);
-            int amount = authors.size() + books.size();
+            int amount = authors.size() + booksCount;
 
             long endTime = System.currentTimeMillis();
             long time = endTime - startTime;
@@ -87,12 +93,11 @@ public class MainActivity extends AppCompatActivity {
             Box<Author> authorBox = ObjectBox.get().boxFor(Author.class);
             Box<Book> bookBox = ObjectBox.get().boxFor(Book.class);
 
-            authorBox.removeAll();
             bookBox.removeAll();
+            authorBox.removeAll();
             return "Removed all records.";
         });
     }
-
 
     /**
      * Convenient async task for showing text after running something
@@ -142,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
      */
     interface Task {
         /**
-         * @return runtime a string to display after this task is done
+         * @return a string to display after this task is done
          */
         String execute();
     }

@@ -25,7 +25,7 @@
     },
     {
       "id": "2:218100293968100804",
-      "lastPropertyId": "4:6895146242589330352",
+      "lastPropertyId": "5:8451720263620868942",
       "name": "Book",
       "properties": [
         {
@@ -41,23 +41,27 @@
           "name": "published"
         },
         {
-          "id": "4:6895146242589330352",
-          "indexId": "1:2646233423451366478",
-          "name": "customerId"
+          "id": "5:8451720263620868942",
+          "indexId": "2:6992111571666761624",
+          "name": "authorId"
         }
       ],
       "relations": []
     }
   ],
   "lastEntityId": "2:218100293968100804",
-  "lastIndexId": "1:2646233423451366478",
+  "lastIndexId": "2:6992111571666761624",
   "lastRelationId": "0:0",
   "lastSequenceId": "0:0",
   "modelVersion": 4,
   "modelVersionParserMinimum": 4,
   "retiredEntityUids": [],
-  "retiredIndexUids": [],
-  "retiredPropertyUids": [],
+  "retiredIndexUids": [
+    2646233423451366478
+  ],
+  "retiredPropertyUids": [
+    6895146242589330352
+  ],
   "retiredRelationUids": [],
   "version": 1
 }

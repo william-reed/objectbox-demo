@@ -1,6 +1,9 @@
 package dev.williamreed.objectboxdemo;
 
 import android.app.Application;
+import android.util.Log;
+
+import io.objectbox.android.AndroidObjectBrowser;
 
 public class DemoApplication extends Application {
 
@@ -8,5 +11,8 @@ public class DemoApplication extends Application {
     public void onCreate() {
         super.onCreate();
         ObjectBox.init(this);
+
+        boolean started = new AndroidObjectBrowser(ObjectBox.get()).start(this);
+        Log.i("ObjectBrowser", "Started: " + started);
     }
 }

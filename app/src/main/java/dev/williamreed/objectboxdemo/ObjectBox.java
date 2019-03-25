@@ -20,4 +20,3 @@ public class ObjectBox {
         return boxStore;
     }
 }
-

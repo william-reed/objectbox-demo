@@ -21,7 +21,12 @@
           "name": "lastName"
         }
       ],
-      "relations": []
+      "relations": [
+        {
+          "id": "1:6897092748324735124",
+          "name": "books"
+        }
+      ]
     },
     {
       "id": "2:218100293968100804",
@@ -51,7 +56,7 @@
   ],
   "lastEntityId": "2:218100293968100804",
   "lastIndexId": "2:6992111571666761624",
-  "lastRelationId": "0:0",
+  "lastRelationId": "1:6897092748324735124",
   "lastSequenceId": "0:0",
   "modelVersion": 4,
   "modelVersionParserMinimum": 4,
