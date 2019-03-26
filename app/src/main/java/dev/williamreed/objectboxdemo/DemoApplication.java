@@ -3,6 +3,7 @@ package dev.williamreed.objectboxdemo;
 import android.app.Application;
 import android.util.Log;
 
+import dev.williamreed.objectboxdemo.storage.ObjectBox;
 import io.objectbox.android.AndroidObjectBrowser;
 
 public class DemoApplication extends Application {

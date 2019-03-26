@@ -1,7 +1,8 @@
-package dev.williamreed.objectboxdemo;
+package dev.williamreed.objectboxdemo.storage;
 
 import android.content.Context;
 
+import dev.williamreed.objectboxdemo.models.MyObjectBox;
 import io.objectbox.BoxStore;
 
 /**
@@ -10,7 +11,7 @@ import io.objectbox.BoxStore;
 public class ObjectBox {
     private static BoxStore boxStore;
 
-    static void init(Context context) {
+    public static void init(Context context) {
         boxStore = MyObjectBox.builder()
                 .androidContext(context.getApplicationContext())
                 .build();

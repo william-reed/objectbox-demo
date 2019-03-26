@@ -1,4 +1,4 @@
-package dev.williamreed.objectboxdemo;
+package dev.williamreed.objectboxdemo.models;
 
 import io.objectbox.annotation.Entity;
 import io.objectbox.annotation.Id;

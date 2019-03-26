@@ -1,4 +1,4 @@
-package dev.williamreed.objectboxdemo;
+package dev.williamreed.objectboxdemo.storage;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -13,11 +13,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import dev.williamreed.objectboxdemo.models.Author;
+import dev.williamreed.objectboxdemo.models.Book;
+
 public class SQLiteDataTest extends SQLiteOpenHelper implements DataTest {
     private static final String AUTHORS_TABLE = "create table IF NOT EXISTS authors ( author_id integer constraint authors_pk primary key autoincrement, firstName TEXT not null, lastName text not null );";
     private static final String BOOKS_TABLE = "create table IF NOT EXISTS books ( book_id integer constraint book_pk primary key autoincrement, name TEXT not null, published TEXT not null, author_id integer not null constraint authors_fk references authors (author_id) );";
 
-    SQLiteDataTest(Context context) {
+    public SQLiteDataTest(Context context) {
         super(context, "demo_db", null, 1);
     }
 

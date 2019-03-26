@@ -10,6 +10,8 @@ import android.widget.Toast;
 import java.lang.ref.WeakReference;
 
 import androidx.appcompat.app.AppCompatActivity;
+import dev.williamreed.objectboxdemo.storage.ObjectBoxDataTest;
+import dev.williamreed.objectboxdemo.storage.SQLiteDataTest;
 
 public class MainActivity extends AppCompatActivity {
     private ObjectBoxDataTest objectBoxDataTest = new ObjectBoxDataTest();

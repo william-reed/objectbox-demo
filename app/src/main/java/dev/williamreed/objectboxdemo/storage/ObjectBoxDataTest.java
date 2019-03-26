@@ -1,4 +1,4 @@
-package dev.williamreed.objectboxdemo;
+package dev.williamreed.objectboxdemo.storage;
 
 import com.github.javafaker.Faker;
 
@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import dev.williamreed.objectboxdemo.models.Author;
+import dev.williamreed.objectboxdemo.models.Book;
 import io.objectbox.Box;
 
 public class ObjectBoxDataTest implements DataTest {

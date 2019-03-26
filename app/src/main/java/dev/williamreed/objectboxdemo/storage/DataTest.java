@@ -1,4 +1,4 @@
-package dev.williamreed.objectboxdemo;
+package dev.williamreed.objectboxdemo.storage;
 
 /**
  * Data Test interface
