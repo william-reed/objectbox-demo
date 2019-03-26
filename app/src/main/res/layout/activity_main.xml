@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,43 +7,77 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/storeBulkData"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Store Bulk Data"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_gravity="center_horizontal"
+        android:text="ObjectBox"
+        android:textSize="24sp" />
 
     <Button
-        android:id="@+id/readBulkData"
+        android:id="@+id/obStoreBulkData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Read Bulk Data"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/storeBulkData" />
+        android:layout_gravity="center_horizontal"
+        android:text="Store Bulk Data" />
+
+    <Button
+        android:id="@+id/obReadBulkData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Read Bulk Data" />
 
 
     <Button
-        android:id="@+id/deleteAllData"
+        android:id="@+id/obDeleteAllData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Delete All Data"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/readBulkData" />
+        android:layout_gravity="center_horizontal"
+        android:text="Delete All Data" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="20dp"
+        android:background="#80A2A0A0" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="SQLite"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/sqlStoreBulkData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Store Bulk Data" />
+
+    <Button
+        android:id="@+id/sqlReadBulkData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Read Bulk Data" />
+
+
+    <Button
+        android:id="@+id/sqlDeleteAllData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Delete All Data" />
 
     <ProgressBar
         android:id="@+id/spinner"
         style="?android:attr/progressBarStyleLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:visibility="gone"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/deleteAllData"
         tools:visibility="visible" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
