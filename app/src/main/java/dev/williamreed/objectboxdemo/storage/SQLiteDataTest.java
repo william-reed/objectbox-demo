@@ -124,6 +124,8 @@ public class SQLiteDataTest extends SQLiteOpenHelper implements DataTest {
 
     @Override
     public String deleteAll() {
+        long startTime = System.currentTimeMillis();
+        
         SQLiteDatabase db = getWritableDatabase();
         try {
             this.getWritableDatabase().beginTransaction();
@@ -136,7 +138,8 @@ public class SQLiteDataTest extends SQLiteOpenHelper implements DataTest {
             db.endTransaction();
         }
 
-        return "Removed all data";
+        long time = System.currentTimeMillis() - startTime;
+        return "Removed in " + time / 1000.0 + " seconds.";
     }
 
     @Override

@@ -65,11 +65,15 @@ public class ObjectBoxDataTest implements DataTest {
 
     @Override
     public String deleteAll() {
+        long startTime = System.currentTimeMillis();
+
         Box<Author> authorBox = ObjectBox.get().boxFor(Author.class);
         Box<Book> bookBox = ObjectBox.get().boxFor(Book.class);
 
         bookBox.removeAll();
         authorBox.removeAll();
-        return "Removed all records.";
+
+        long time = System.currentTimeMillis() - startTime;
+        return "Removed in " + time / 1000.0 + " seconds.";
     }
 }

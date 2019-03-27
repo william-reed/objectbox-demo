@@ -12,6 +12,8 @@ public class Author {
     public String lastName;
     public ToMany<Book> books;
 
+    public Author() {}
+
     /**
      * Convenience constructor for manual creation
      */
