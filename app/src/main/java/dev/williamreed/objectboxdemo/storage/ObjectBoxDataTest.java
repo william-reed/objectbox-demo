@@ -14,7 +14,6 @@ public class ObjectBoxDataTest implements DataTest {
 
     @Override
     public String bulkWrite() {
-        long startTime = System.currentTimeMillis();
         Box<Author> authorBox = ObjectBox.get().boxFor(Author.class);
         Faker faker = new Faker();
 
@@ -37,6 +36,8 @@ public class ObjectBoxDataTest implements DataTest {
             booksCount += books.size();
         }
 
+        // insert the data
+        long startTime = System.currentTimeMillis();
         authorBox.put(authors);
         int amount = authors.size() + booksCount;
 
@@ -48,11 +49,11 @@ public class ObjectBoxDataTest implements DataTest {
 
     @Override
     public String bulkRead() {
-        long startTime = System.currentTimeMillis();
 
         Box<Author> authorBox = ObjectBox.get().boxFor(Author.class);
         Box<Book> bookBox = ObjectBox.get().boxFor(Book.class);
 
+        long startTime = System.currentTimeMillis();
         // don't care about result
         int amount = authorBox.getAll().size() + bookBox.getAll().size();
         bookBox.getAll();
@@ -65,11 +66,11 @@ public class ObjectBoxDataTest implements DataTest {
 
     @Override
     public String deleteAll() {
-        long startTime = System.currentTimeMillis();
 
         Box<Author> authorBox = ObjectBox.get().boxFor(Author.class);
         Box<Book> bookBox = ObjectBox.get().boxFor(Book.class);
 
+        long startTime = System.currentTimeMillis();
         bookBox.removeAll();
         authorBox.removeAll();
 

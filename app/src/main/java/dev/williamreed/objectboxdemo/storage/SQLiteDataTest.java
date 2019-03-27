@@ -26,7 +26,6 @@ public class SQLiteDataTest extends SQLiteOpenHelper implements DataTest {
 
     @Override
     public String bulkWrite() {
-        long startTime = System.currentTimeMillis();
         Faker faker = new Faker();
 
         // generate some fake data
@@ -43,6 +42,8 @@ public class SQLiteDataTest extends SQLiteOpenHelper implements DataTest {
             authors.add(author);
         }
 
+        // insert the data
+        long startTime = System.currentTimeMillis();
         int amount = authors.size() + books.size();
         SQLiteDatabase db = getWritableDatabase();
 
@@ -78,10 +79,10 @@ public class SQLiteDataTest extends SQLiteOpenHelper implements DataTest {
 
     @Override
     public String bulkRead() {
-        long startTime = System.currentTimeMillis();
-
         SQLiteDatabase db = getWritableDatabase();
         Cursor cursor = null;
+
+        long startTime = System.currentTimeMillis();
         int amount = 0;
         try {
             db.beginTransaction();
@@ -124,9 +125,9 @@ public class SQLiteDataTest extends SQLiteOpenHelper implements DataTest {
 
     @Override
     public String deleteAll() {
-        long startTime = System.currentTimeMillis();
-        
         SQLiteDatabase db = getWritableDatabase();
+        
+        long startTime = System.currentTimeMillis();
         try {
             this.getWritableDatabase().beginTransaction();
 
